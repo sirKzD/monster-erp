@@ -15,9 +15,10 @@ import {
   deleteColumn,
   renameColumn,
   generateAITasks
-} from "./kanbanService";
+} from "../services/kanbanService";
 
-import type { KanbanColumns, SupabaseUser } from "../types";
+import type { KanbanColumns } from "../types/kanban.types";
+import type { SupabaseUser } from "../../../types";
 
 const mockUser = {
   id: "user-1",

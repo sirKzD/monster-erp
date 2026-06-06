@@ -8,7 +8,7 @@ import {
 } from "@dnd-kit/core";
 import Column from "./Column";
 import TodoItem from "./TodoItem";
-import type { KanbanTask, KanbanColumns } from "../../types";
+import type { KanbanTask, KanbanColumns } from "../types/kanban.types";
 
 // ─────────────────────────────────────────────
 // TYPES

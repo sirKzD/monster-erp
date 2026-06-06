@@ -1,6 +1,9 @@
-import type { KanbanTask, KanbanColumns } from "../types";
-import type { SupabaseUser } from "../types";
+import type {
+  KanbanTask,
+  KanbanColumns
+} from "../types/kanban.types";
 
+import type { SupabaseUser } from "../../../types";
 
 type SetColumns = React.Dispatch<React.SetStateAction<KanbanColumns>>;
 

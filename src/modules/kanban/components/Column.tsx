@@ -4,7 +4,7 @@ import {
     verticalListSortingStrategy 
 } from "@dnd-kit/sortable";
 import TodoItem from "./TodoItem";
-import type { KanbanTask } from "../../types";
+import type { KanbanTask } from "../types/kanban.types";
 
 interface ColumnProps {
     id: string

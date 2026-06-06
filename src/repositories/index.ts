@@ -5,10 +5,3 @@ export type {
   BoardMetaUpdate
 } from "./boardRepository";
 
-export { kanbanRepository } from "./kanbanRepository";
-export type {
-  KanbanBoardRow,
-  KanbanBoardInsert,
-  KanbanBoardUpdate
-} from "./kanbanRepository";
-

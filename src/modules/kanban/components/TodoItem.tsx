@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import type { KanbanTask } from "../../types";
+import type { KanbanTask } from "../types/kanban.types";
 
 
 interface TodoItemProps {

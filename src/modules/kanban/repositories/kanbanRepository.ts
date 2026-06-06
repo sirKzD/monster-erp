@@ -1,10 +1,10 @@
-import { supabase } from "../utils/supabase";
+import { supabase } from "../../../utils/supabase";
 import type { RealtimeChannel } from "@supabase/supabase-js";
 import type {
   Tables,
   TablesInsert,
   TablesUpdate
-} from "../types/database.types";
+} from "../../../types/database.types";
 
 export type KanbanBoardRow    = Tables<"sirKzDPorto">;
 export type KanbanBoardInsert = TablesInsert<"sirKzDPorto">;

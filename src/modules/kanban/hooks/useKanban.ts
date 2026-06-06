@@ -5,17 +5,17 @@ import {
   useCallback
 } from "react";
 
-import { encryptData } from "../../crypto/encrypt";
-import { decryptData } from "../../crypto/decrypt";
+import { encryptData } from "../../../crypto/encrypt";
+import { decryptData } from "../../../crypto/decrypt";
 
 import {
   getWorkspaceKey,
   createWorkspaceKey
-} from "../../crypto/workspaceKey";
+} from "../../../crypto/workspaceKey";
 
-import { kanbanRepository } from "../../repositories";
+import { kanbanRepository } from "../repositories/kanbanRepository";
 
-import type { KanbanTask, KanbanColumns } from "../../types";
+import type { KanbanTask, KanbanColumns } from "../types/kanban.types";
 
 export type { KanbanTask as Task, KanbanColumns as Columns };
 
