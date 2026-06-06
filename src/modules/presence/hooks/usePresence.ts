@@ -11,7 +11,7 @@ import {
     trackPresence,
     removePresenceChannel,
     type PresenceUser
-} from "../../services/presenceService";
+} from "../services/presenceService";
 
 import type { RealtimeChannel } from "@supabase/supabase-js";
 

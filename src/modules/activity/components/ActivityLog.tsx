@@ -1,7 +1,7 @@
-import type { SupabaseActivityLog } from "../../types";
+import type { ActivityLogRow } from "../types/activity.types";
 
 interface ActivityLogProps {
-  logs: SupabaseActivityLog[];
+  logs: ActivityLogRow[];
 }
 
 function ActivityLog({ logs }: ActivityLogProps) {

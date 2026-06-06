@@ -1,10 +1,11 @@
-import { activityRepository } from "../repositories";
-import type { SupabaseUser, SupabaseActivityLog } from "../types";
+import { activityRepository } from "../repositories/activityRepository";
+import type { ActivityLogRow } from "../types/activity.types";
+import type { SupabaseUser, SupabaseActivityLog } from "../../../types";
 
 
 export async function fetchActivityLogs(
   activeBoard: string
-): Promise<SupabaseActivityLog[]> {
+): Promise<ActivityLogRow[]> {
   return activityRepository.findByBoard(activeBoard);
 }
 

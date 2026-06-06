@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
-import type { SupabaseUser, SupabaseActivityLog } from "../../types";
-import { fetchActivityLogs, createActivityLog } from "../../services/activityService";
+import {
+  fetchActivityLogs,
+  createActivityLog
+} from "../services/activityService";
+import type { ActivityLogRow } from "../types/activity.types";
+import type { SupabaseUser } from "../../../types";
 
 interface UseActivityReturn {
-  logs: SupabaseActivityLog[];
+  logs: ActivityLogRow[];
   addLog: (action: string, currentUser: SupabaseUser | null) => Promise<void>;
 }
 
@@ -12,7 +16,7 @@ export default function useActivity(
   activeBoard: string
 ): UseActivityReturn {
 
-  const [logs, setLogs] = useState<SupabaseActivityLog[]>([]);
+  const [logs, setLogs] = useState<ActivityLogRow[]>([]);
 
   useEffect(() => {
     if (!activeBoard) return;
@@ -31,7 +35,7 @@ export default function useActivity(
   ): Promise<void> => {
     if (!currentUser) return;
 
-    const optimisticLog: SupabaseActivityLog = {
+    const optimisticLog: ActivityLogRow = {
       id: Date.now(),
       board_id: activeBoard,
       user_email: currentUser.email ?? "",

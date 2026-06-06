@@ -3,8 +3,6 @@ import { signOut } from "./services";
 
 import Board from "./features/kanban/Board";
 import TodoInput from "./features/kanban/TodoInput";
-import ActivityLog from "./features/activity/ActivityLog";
-import LiveCursor from "./features/presence/LiveCursor";
 import AIPanel from "./features/ai/AIPanel";
 import Auth from "./features/auth/Auth";
 
@@ -13,8 +11,6 @@ import useStats from "./features/stats/useStats";
 import useAuth from "./features/auth/useAuth";
 import useBoards from "./features/boards/useBoards";
 import useKanban from "./features/kanban/useKanban";
-import usePresence from "./features/presence/usePresence";
-import useActivity from "./features/activity/useActivity";
 
 import {
   addTodo,
@@ -26,6 +22,8 @@ import {
   renameColumn,
   generateAITasks
 } from "./services/kanbanService";
+import { LiveCursor, usePresence } from "./modules/presence"
+import { ActivityLog, useActivity } from "./modules/activity";
 import { exportData } from "./services/exportService";
 import { testRSA } from "./services/rsaService";
 
