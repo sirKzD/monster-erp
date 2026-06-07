@@ -14,8 +14,9 @@ export type {
     InviteWorkspaceMemberInput
 } from "./types/workspace.types";
 
-export { workspaceRepository }
-from "./repositories/workspaceRepository";
+export { workspaceRepository } from "./repositories/workspaceRepository";
+
+export { default as useWorkspace } from "./hooks/useWorkspace";
 
 export {
   canInviteMember,
@@ -25,3 +26,7 @@ export {
   canViewWorkspace,
   canManageBilling
 } from "./services/workspacePermissionService";
+
+export { createWorkspaceBoardLink, canRemoveWorkspaceBoard } from "./services/workspaceBoardService";
+
+export type { WorkspaceBoard } from "./services/workspaceBoardService";
