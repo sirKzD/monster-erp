@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../../utils/supabase";
-import { getCurrentUser, initUserKeys } from "../../services/authService";
-import type { SupabaseUser } from "../../types";
+import { onAuthStateChange } from "../repositories/authRepository";
+import { getCurrentUser, initUserKeys } from "../services/authService";
+import type { SupabaseUser } from "../../../types";
 
 
 interface UseAuthReturn {
@@ -41,9 +41,8 @@ export default function useAuth(): UseAuthReturn {
 
     init();
 
-    const { data: { subscription } } =
-      supabase.auth.onAuthStateChange((_event, session) => {
-        setUser(session?.user ?? null);
+    const subscription = onAuthStateChange((currentUser) => {
+        setUser(currentUser);
       });
 
     return () => {

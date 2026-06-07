@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
-import { signOut } from "./services";
+import { Auth, useAuth, signOut } from "./modules/auth";
  
 
 import AIPanel from "./features/ai/AIPanel";
-import Auth from "./features/auth/Auth";
-
 import useDarkMode from "./hooks/useDarkMode";
 import useStats from "./features/stats/useStats";
-import useAuth from "./features/auth/useAuth";
 import useBoards from "./features/boards/useBoards";
 
 

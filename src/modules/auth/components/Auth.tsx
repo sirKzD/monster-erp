@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { signIn, signUp } from "../../services/authService";
+import { signIn, signUp } from "../services/authService";
 
 interface AuthCredentials {
   email: string;
