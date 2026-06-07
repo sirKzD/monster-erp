@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import type { SupabaseUser } from "../../types";
+import type { SupabaseUser } from "../../../types";
 
 import {
   fetchUserBoards, 
   checkBoardAccess,
   createBoard,
   inviteMember
-} from "../../services/boardService";
+} from "../services/boardService";
 
 interface UseBoardsReturn {
   boards: string[];

@@ -1,5 +1,5 @@
-import { boardRepository } from "../repositories";
-import type { SupabaseUser } from "../types";
+import { boardRepository } from "../repositories/boardRepository";
+import type { SupabaseUser } from "../../../types";
 
 export async function fetchUserBoards(
   user: SupabaseUser

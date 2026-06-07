@@ -5,7 +5,6 @@ import { Auth, useAuth, signOut } from "./modules/auth";
 import AIPanel from "./features/ai/AIPanel";
 import useDarkMode from "./hooks/useDarkMode";
 import useStats from "./features/stats/useStats";
-import useBoards from "./features/boards/useBoards";
 
 
 import {
@@ -18,6 +17,7 @@ import {
   renameColumn,
   generateAITasks
 } from "./modules/kanban";
+import { useBoards } from "./modules/boards";
 import { Board, TodoInput, useKanban } from "./modules/kanban"
 import { LiveCursor, usePresence } from "./modules/presence"
 import { ActivityLog, useActivity } from "./modules/activity";

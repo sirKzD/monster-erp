@@ -11,13 +11,13 @@ import {
   checkBoardAccess,
   createBoard,
   inviteMember
-} from "./boardService";
+} from "../services/boardService";
 
-import { boardRepository } from "../repositories";
+import { boardRepository } from "../repositories/boardRepository";
 
-import type { SupabaseUser } from "../types";
+import type { SupabaseUser } from "../../../types";
 
-vi.mock("../repositories", () => ({
+vi.mock("../repositories/boardRepository", () => ({
   boardRepository: {
     findAll: vi.fn(),
     findById: vi.fn(),
