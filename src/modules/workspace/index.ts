@@ -46,3 +46,8 @@ export {
   markInviteAccepted,
   rejectWorkspaceInvite
 } from "./services/workspaceInviteService";
+
+export {
+    canChangeMemberRole,
+    changeWorkspaceMemberRole
+} from "./services/workspaceRoleService";
