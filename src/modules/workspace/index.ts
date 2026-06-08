@@ -51,3 +51,8 @@ export {
     canChangeMemberRole,
     changeWorkspaceMemberRole
 } from "./services/workspaceRoleService";
+
+export {
+  canRemoveWorkspaceMember,
+  removeWorkspaceMember
+} from "./services/workspaceRemoveMemberService";
