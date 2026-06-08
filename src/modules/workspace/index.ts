@@ -56,3 +56,8 @@ export {
   canRemoveWorkspaceMember,
   removeWorkspaceMember
 } from "./services/workspaceRemoveMemberService";
+
+export {
+  canTransferOwnership,
+  transferWorkspaceOwnership
+} from "./services/workspaceOwnershipService";
