@@ -66,3 +66,13 @@ export {
     createAuditEvent,
     filterAuditEvents
 } from "./services/workspaceAuditService";
+
+export {
+    createNotificationFromAuditEvent,
+    markNotificationRead,
+    filterUnreadNotifications
+} from "./services/workspaceNotificationService";
+
+export type {
+    WorkspaceNotification
+} from "./services/workspaceNotificationService";
