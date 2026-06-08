@@ -40,3 +40,9 @@ export {
 export type {
     WorkspaceInvite
 } from "./types/workspace.types";
+
+export {
+  acceptWorkspaceInvite,
+  markInviteAccepted,
+  rejectWorkspaceInvite
+} from "./services/workspaceInviteService";

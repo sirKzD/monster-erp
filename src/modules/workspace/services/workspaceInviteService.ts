@@ -1,4 +1,5 @@
 import type {
+    Workspace,
   WorkspaceInvite,
   WorkspaceMember,
   WorkspaceRole
@@ -41,4 +42,41 @@ export function createWorkspaceInvite(
     createdAt: new Date().toISOString(),
     status: "pending"
   };
+}
+
+export function acceptWorkspaceInvite(
+    invite: WorkspaceInvite,
+    userId: string 
+): WorkspaceMember | null {
+    if (invite.status !== "pending") return null;
+
+    return {
+        workspaceId: invite.workspaceId,
+        userId,
+        email: invite.email,
+        role: invite.role,
+        joinedAt: new Date().toISOString()
+    };
+}
+
+export function markInviteAccepted(
+    invite: WorkspaceInvite
+): WorkspaceInvite | null {
+    if (invite.status !== "pending") return null;
+
+    return {
+        ...invite,
+        status: "accepted"
+    };
+}
+
+export function rejectWorkspaceInvite(
+    invite: WorkspaceInvite
+): WorkspaceInvite | null {
+    if (invite.status !== "pending") return null;
+
+    return {
+        ...invite,
+        status: "rejected"
+    };
 }

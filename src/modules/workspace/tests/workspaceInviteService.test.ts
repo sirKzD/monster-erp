@@ -3,7 +3,10 @@ import { describe, it, expect } from "vitest";
 import {
   isValidInviteEmail,
   hasExistingMember,
-  createWorkspaceInvite
+  createWorkspaceInvite,
+  acceptWorkspaceInvite,
+  markInviteAccepted,
+  rejectWorkspaceInvite
 } from "../services/workspaceInviteService";
 
 import type { WorkspaceMember } from "../types/workspace.types";
@@ -86,4 +89,74 @@ describe("workspaceInviteService", () => {
 
     expect(invite).toBeNull();
   });
+
+    it("accept pending invite and creates workspace member", () => {
+        const invite = createWorkspaceInvite(
+            "workspace-1",
+            "new@test.com",
+            "member",
+            "user-owner",
+            "owner",
+            members 
+        );
+
+        expect(invite).not.toBeNull();
+
+        const member = acceptWorkspaceInvite(invite!, "user-2");
+
+        expect(member).toMatchObject({
+            workspaceId: "workspace-1",
+            userId: "user-2",
+            email: "new@test.com",
+            role: "member"
+        });
+
+        expect(member?.joinedAt).toBeTruthy();
+    });
+
+    it("marks invite as accepted", () => {
+        const invite = createWorkspaceInvite(
+            "workspace-1",
+            "new@test.com",
+            "member",
+            "user-owner",
+            "owner",
+            members 
+        );
+
+        const accepted = markInviteAccepted(invite!);
+
+        expect(accepted?.status).toBe("accepted");
+    });
+
+    it("reject pending invite", () => {
+        const invite = createWorkspaceInvite(
+            "workspace-1",
+            "new@test.com",
+            "member",
+            "user-owner",
+            "owner",
+            members 
+        );
+
+        const rejected = rejectWorkspaceInvite(invite!);
+
+        expect(rejected?.status).toBe("rejected");
+    });
+
+    it("does not accept non-pending invite", () => {
+        const invite = createWorkspaceInvite(
+            "workspace-1",
+            "new@test.com",
+            "member",
+            "user-owner",
+            "owner",
+            members 
+        )!;
+
+        const acceptedInvite = markInviteAccepted(invite)!;
+        const member = acceptWorkspaceInvite(acceptedInvite, "user-2");
+
+        expect(member).toBeNull();
+    });
 });

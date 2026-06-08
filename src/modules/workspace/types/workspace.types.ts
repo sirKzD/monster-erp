@@ -38,3 +38,4 @@ export interface WorkspaceInvite {
     createdAt: string;
     status: "pending" | "accepted" | "rejected"
 }
+
