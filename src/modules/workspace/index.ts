@@ -61,3 +61,8 @@ export {
   canTransferOwnership,
   transferWorkspaceOwnership
 } from "./services/workspaceOwnershipService";
+
+export {
+    createAuditEvent,
+    filterAuditEvents
+} from "./services/workspaceAuditService";
