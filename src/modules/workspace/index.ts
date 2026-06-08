@@ -30,3 +30,13 @@ export {
 export { createWorkspaceBoardLink, canRemoveWorkspaceBoard } from "./services/workspaceBoardService";
 
 export type { WorkspaceBoard } from "./services/workspaceBoardService";
+
+export {
+    isValidInviteEmail,
+    hasExistingMember,
+    createWorkspaceInvite
+} from "./services/workspaceInviteService";
+
+export type {
+    WorkspaceInvite
+} from "./types/workspace.types";

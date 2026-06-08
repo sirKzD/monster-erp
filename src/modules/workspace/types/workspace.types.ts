@@ -29,3 +29,12 @@ export interface InviteWorkspaceMemberInput {
     email: string;
     role: WorkspaceRole;
 }
+
+export interface WorkspaceInvite {
+    workspaceId: string;
+    email: string;
+    role: WorkspaceRole;
+    invitedBy: string;
+    createdAt: string;
+    status: "pending" | "accepted" | "rejected"
+}
