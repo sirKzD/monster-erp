@@ -14,3 +14,9 @@ export type {
     StockMovementType,
     Supplier
 } from "./types/inventory.types";
+
+export {
+    calculateCurrentStock,
+    hasEnoughStock,
+    preventNegativeStock
+} from "./services/inventoryStockService";
