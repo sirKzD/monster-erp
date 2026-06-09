@@ -86,3 +86,11 @@ export {
 export type {
     WorkspaceFeedItem
 } from "./services/workspaceActivityFeedService";
+
+export {
+  createWorkspaceDashboardSummary
+} from "./services/workspaceDashboardService";
+
+export type {
+  WorkspaceDashboardSummary
+} from "./services/workspaceDashboardService";
