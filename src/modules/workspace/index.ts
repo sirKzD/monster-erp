@@ -76,3 +76,13 @@ export {
 export type {
     WorkspaceNotification
 } from "./services/workspaceNotificationService";
+
+export {
+    createFeedFromAuditEvents,
+    filterFeedByActor,
+    filterFeedByAction
+} from "./services/workspaceActivityFeedService";
+
+export type {
+    WorkspaceFeedItem
+} from "./services/workspaceActivityFeedService";
