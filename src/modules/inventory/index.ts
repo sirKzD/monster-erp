@@ -20,3 +20,7 @@ export {
     hasEnoughStock,
     preventNegativeStock
 } from "./services/inventoryStockService";
+
+export {
+    createTransferMovements
+} from "./services/inventoryTransferService";
