@@ -42,3 +42,12 @@ export {
 export type {
   InventoryValuation
 } from "./services/inventoryValuationService";
+
+export {
+  createReorderSuggestion,
+  filterReorderSuggestions
+} from "./services/inventoryReorderService";
+
+export type {
+  ReorderSuggestion
+} from "./services/inventoryReorderService";
