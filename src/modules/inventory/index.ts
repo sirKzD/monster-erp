@@ -24,3 +24,12 @@ export {
 export {
     createTransferMovements
 } from "./services/inventoryTransferService";
+
+export {
+  createLowStockAlert,
+  filterLowStockAlerts
+} from "./services/inventoryLowStockService";
+
+export type {
+  LowStockAlert
+} from "./services/inventoryLowStockService";
