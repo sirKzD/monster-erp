@@ -33,3 +33,12 @@ export {
 export type {
   LowStockAlert
 } from "./services/inventoryLowStockService";
+
+export {
+  calculateInventoryValue,
+  calculateTotalInventoryValue
+} from "./services/inventoryValuationService";
+
+export type {
+  InventoryValuation
+} from "./services/inventoryValuationService";
