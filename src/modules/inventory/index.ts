@@ -51,3 +51,15 @@ export {
 export type {
   ReorderSuggestion
 } from "./services/inventoryReorderService";
+
+export {
+  calculatePurchaseOrderTotal,
+  createPurchaseOrder,
+  changePurchaseOrderStatus
+} from "./services/purchaseOrderService";
+
+export type {
+  PurchaseOrder,
+  PurchaseOrderItem,
+  PurchaseOrderStatus
+} from "./types/purchaseOrder.types";
