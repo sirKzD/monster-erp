@@ -63,3 +63,19 @@ export type {
   PurchaseOrderItem,
   PurchaseOrderStatus
 } from "./types/purchaseOrder.types";
+
+export {
+  canChangePurchaseOrderStatus,
+  updatePurchaseOrderStatus
+} from "./services/purchaseOrderApprovalService";
+
+export {
+  isPurchaseOrderReceivable,
+  createGoodsReceipt,
+  createStockMovementsFromReceipt,
+  receivePurchaseOrder
+} from "./services/goodsReceiptService";
+
+export type {
+  GoodsReceipt
+} from "./services/goodsReceiptService";
