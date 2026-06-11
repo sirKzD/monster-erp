@@ -218,3 +218,13 @@ export type {
   ReturnOrder,
   ReturnOrderStatus
 } from "./services/returnOrderService";
+
+export {
+  createPutawayRule,
+  findPutawayLocation,
+  filterPutawayRulesByWarehouse
+} from "./services/putawayRuleService";
+
+export type {
+  PutawayRule
+} from "./services/putawayRuleService";
