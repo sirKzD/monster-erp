@@ -249,3 +249,16 @@ export {
 export type {
   InventoryDashboardV2
 } from "./services/inventoryDashboardService";
+
+export {
+  calculateAgeDays,
+  classifyInventoryAge,
+  createInventoryAgingItem,
+  createInventoryAgingReport,
+  filterAgingItemsByStatus
+} from "./services/inventoryAgingService";
+
+export type {
+  InventoryAgeStatus,
+  InventoryAgingItem
+} from "./services/inventoryAgingService";
