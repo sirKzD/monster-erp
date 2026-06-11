@@ -182,3 +182,15 @@ export {
 export type {
   CycleCount
 } from "./services/cycleCountService";
+
+export {
+  createStockPicking,
+  markPickingAsPicked,
+  cancelPicking,
+  filterPendingPickings
+} from "./services/stockPickingService";
+
+export type {
+  StockPicking,
+  StockPickingStatus
+} from "./services/stockPickingService";
