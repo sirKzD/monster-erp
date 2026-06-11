@@ -99,3 +99,16 @@ export {
 export type {
   SupplierRatingInput
 } from "./services/supplierRatingService";
+
+export {
+  updateWarehouseStatus,
+  createWarehouseLocation,
+  updateWarehouseLocationStatus,
+  filterActiveWarehouses,
+  filterActiveWarehouseLocations
+} from "./services/warehouseService";
+
+export type {
+  WarehouseStatus,
+  WarehouseLocation
+} from "./types/inventory.types";

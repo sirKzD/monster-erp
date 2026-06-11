@@ -56,11 +56,14 @@ describe("inventoryService", () => {
             " Batam "
         );
 
-        expect(warehouse).toEqual({
+        expect(warehouse).toMatchObject({
             id: "id-1",
             name: "Main Warehouse",
-            location: "Batam"
+            location: "Batam",
+            status: "active"
         });
+
+        expect(warehouse.createdAt).toBeTruthy();
     });
 
     it("creates stock movement", () => {

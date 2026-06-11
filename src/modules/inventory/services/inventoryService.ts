@@ -38,7 +38,9 @@ export function createWarehouse(
   return {
     id: crypto.randomUUID(),
     name: name.trim(),
-    location: location.trim()
+    location: location.trim(),
+    status: "active",
+    createdAt: new Date().toISOString()
   };
 }
 

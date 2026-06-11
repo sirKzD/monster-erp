@@ -16,6 +16,8 @@ export interface Warehouse {
     id: string;
     name: string;
     location: string;
+    status: WarehouseStatus;
+    createdAt: string;
 }
 
 export type StockMovementType = "in" | "out" | "transfer";
@@ -42,5 +44,18 @@ export interface Supplier {
     address?: string;
     status: SupplierStatus;
     rating: number;
+    createdAt: string;
+}
+
+export type WarehouseStatus =
+  | "active"
+  | "inactive";
+
+export interface WarehouseLocation {
+    id: string;
+    warehouseId: string;
+    name: string;
+    code: string;
+    status: WarehouseStatus;
     createdAt: string;
 }
