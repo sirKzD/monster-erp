@@ -172,3 +172,13 @@ export {
   filterExpiredLots,
   filterNearExpiryLots
 } from "./services/expiryTrackingService";
+
+export {
+  createCycleCount,
+  hasVariance,
+  filterVarianceCounts
+} from "./services/cycleCountService";
+
+export type {
+  CycleCount
+} from "./services/cycleCountService";
