@@ -206,3 +206,15 @@ export type {
   DeliveryOrder,
   DeliveryOrderStatus
 } from "./services/deliveryOrderService";
+
+export {
+  createReturnOrder,
+  acceptReturnOrder,
+  rejectReturnOrder,
+  createReturnStockMovement
+} from "./services/returnOrderService";
+
+export type {
+  ReturnOrder,
+  ReturnOrderStatus
+} from "./services/returnOrderService";
