@@ -228,3 +228,15 @@ export {
 export type {
   PutawayRule
 } from "./services/putawayRuleService";
+
+export {
+  isValidPickingRoute,
+  assignPickingRoute,
+  filterPickingsByRoute,
+  getDefaultRouteForPriority
+} from "./services/stockPickingRouteService";
+
+export type {
+  PickingRoute,
+  RoutedStockPicking
+} from "./services/stockPickingRouteService";
