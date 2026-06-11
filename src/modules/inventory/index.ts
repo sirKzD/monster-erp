@@ -112,3 +112,12 @@ export type {
   WarehouseStatus,
   WarehouseLocation
 } from "./types/inventory.types";
+
+export {
+  createInventoryAuditResult,
+  createAuditAdjustmentMovement
+} from "./services/inventoryAuditService";
+
+export type {
+  InventoryAuditResult
+} from "./services/inventoryAuditService";
