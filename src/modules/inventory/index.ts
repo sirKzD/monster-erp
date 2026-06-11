@@ -271,3 +271,15 @@ export {
 export type {
   AdvancedInventoryReport
 } from "./services/advancedInventoryReportService";
+
+export {
+  calculateStockAccuracy,
+  calculateFulfillmentReadiness,
+  calculateInventoryHealth,
+  calculateInventoryGrade,
+  createInventoryKpi
+} from "./services/inventoryKpiService";
+
+export type {
+  InventoryKpi
+} from "./services/inventoryKpiService";
