@@ -240,3 +240,12 @@ export type {
   PickingRoute,
   RoutedStockPicking
 } from "./services/stockPickingRouteService";
+
+export {
+  calculateInventoryHealthScore,
+  createInventoryDashboardV2
+} from "./services/inventoryDashboardService";
+
+export type {
+  InventoryDashboardV2
+} from "./services/inventoryDashboardService";
