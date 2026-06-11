@@ -165,3 +165,10 @@ export type {
   ProductSerialNumber,
   SerialNumberStatus
 } from "./types/inventory.types";
+
+export {
+  isLotExpired,
+  isLotNearExpiry,
+  filterExpiredLots,
+  filterNearExpiryLots
+} from "./services/expiryTrackingService";

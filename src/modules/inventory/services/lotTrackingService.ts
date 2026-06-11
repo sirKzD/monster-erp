@@ -5,14 +5,16 @@ import type {
 export function createProductLot(
   productId: string,
   lotNumber: string,
-  quantity: number
+  quantity: number,
+  expiryDate?: string 
 ): ProductLot {
   return {
     id: crypto.randomUUID(),
     productId,
     lotNumber: lotNumber.trim().toUpperCase(),
     quantity,
-    receivedAt: new Date().toISOString()
+    receivedAt: new Date().toISOString(),
+    expiryDate
   };
 }
 

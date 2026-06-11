@@ -66,6 +66,7 @@ export interface ProductLot {
   lotNumber: string;
   quantity: number;
   receivedAt: string;
+  expiryDate?: string;
 }
 
 export type SerialNumberStatus =
