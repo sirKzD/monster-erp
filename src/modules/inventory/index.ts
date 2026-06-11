@@ -194,3 +194,15 @@ export type {
   StockPicking,
   StockPickingStatus
 } from "./services/stockPickingService";
+
+export {
+  createDeliveryOrder,
+  markDeliveryAsDelivered,
+  cancelDelivery,
+  createStockOutMovement
+} from "./services/deliveryOrderService";
+
+export type {
+  DeliveryOrder,
+  DeliveryOrderStatus
+} from "./services/deliveryOrderService";
