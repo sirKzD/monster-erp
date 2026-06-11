@@ -90,3 +90,12 @@ export {
   filterActiveSuppliers
 } from "./services/supplierService";
 
+export {
+  clampRating,
+  calculateSupplierRating,
+  applySupplierRating
+} from "./services/supplierRatingService";
+
+export type {
+  SupplierRatingInput
+} from "./services/supplierRatingService";
