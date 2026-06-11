@@ -133,3 +133,22 @@ export {
 export type {
   StockReservation
 } from "./services/stockReservationService";
+
+export {
+  createInventoryReportSummary
+} from "./services/inventoryReportingService";
+
+export type {
+  InventoryReportSummary
+} from "./services/inventoryReportingService";
+
+export {
+  createProductLot,
+  findLotByNumber,
+  calculateLotQuantity,
+  consumeLotQuantity
+} from "./services/lotTrackingService";
+
+export type {
+  ProductLot
+} from "./types/inventory.types";

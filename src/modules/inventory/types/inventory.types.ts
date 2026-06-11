@@ -59,3 +59,12 @@ export interface WarehouseLocation {
     status: WarehouseStatus;
     createdAt: string;
 }
+
+export interface ProductLot {
+  id: string;
+  productId: string;
+  lotNumber: string;
+  quantity: number;
+  receivedAt: string;
+}
+;
