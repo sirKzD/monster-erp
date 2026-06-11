@@ -262,3 +262,12 @@ export type {
   InventoryAgeStatus,
   InventoryAgingItem
 } from "./services/inventoryAgingService";
+
+export {
+  calculateInventoryRiskLevel,
+  createAdvancedInventoryReport
+} from "./services/advancedInventoryReportService";
+
+export type {
+  AdvancedInventoryReport
+} from "./services/advancedInventoryReportService";
