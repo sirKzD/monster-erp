@@ -67,4 +67,17 @@ export interface ProductLot {
   quantity: number;
   receivedAt: string;
 }
-;
+
+export type SerialNumberStatus =
+  | "available"
+  | "reserved"
+  | "sold"
+  | "damaged";
+
+export interface ProductSerialNumber {
+  id: string;
+  productId: string;
+  serialNumber: string;
+  status: SerialNumberStatus;
+  receivedAt: string;
+}

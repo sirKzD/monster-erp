@@ -152,3 +152,16 @@ export {
 export type {
   ProductLot
 } from "./types/inventory.types";
+
+export {
+  createSerialNumber,
+  findSerialNumber,
+  updateSerialNumberStatus,
+  filterSerialsByStatus,
+  isSerialAvailable
+} from "./services/serialNumberService";
+
+export type {
+  ProductSerialNumber,
+  SerialNumberStatus
+} from "./types/inventory.types";
