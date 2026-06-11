@@ -3,7 +3,6 @@ import type {
   Category,
   Warehouse,
   StockMovement,
-  Supplier,
   StockMovementType
 } from "../types/inventory.types";
 
@@ -59,13 +58,3 @@ export function createStockMovement(
   };
 }
 
-export function createSupplier(
-  name: string,
-  email: string
-): Supplier {
-  return {
-    id: crypto.randomUUID(),
-    name: name.trim(),
-    email: email.trim().toLowerCase()
-  };
-}

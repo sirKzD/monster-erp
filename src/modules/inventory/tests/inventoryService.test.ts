@@ -10,8 +10,7 @@ import {
     createProduct,
     createCategory,
     createWarehouse,
-    createStockMovement,
-    createSupplier
+    createStockMovement
 } from "../services/inventoryService";
 
 beforeEach(() => {
@@ -21,10 +20,10 @@ beforeEach(() => {
 });
 
 describe("inventoryService", () => {
-    it("create product", () => {
+    it("creates product", () => {
         const product = createProduct(
             " Laptop ",
-            " SKU-001",
+            " SKU-001 ",
             "category-1",
             15000000
         );
@@ -41,7 +40,9 @@ describe("inventoryService", () => {
     });
 
     it("creates category", () => {
-        const category = createCategory(" Electronics ");
+        const category = createCategory(
+            " Electronics "
+        );
 
         expect(category).toEqual({
             id: "id-1",
@@ -59,7 +60,7 @@ describe("inventoryService", () => {
             id: "id-1",
             name: "Main Warehouse",
             location: "Batam"
-        }); 
+        });
     });
 
     it("creates stock movement", () => {
@@ -79,18 +80,5 @@ describe("inventoryService", () => {
         });
 
         expect(movement.createdAt).toBeTruthy();
-    });
-
-    it("creates supplier", () => {
-        const supplier = createSupplier(
-            " PT Supplier ",
-            " SALES@SUPPLIER.COM "
-        );
-
-        expect(supplier).toEqual({
-            id: "id-1",
-            name: "PT Supplier",
-            email: "sales@supplier.com"
-        });
     });
 });

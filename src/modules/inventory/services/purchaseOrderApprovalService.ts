@@ -3,29 +3,22 @@ import type {
   PurchaseOrderStatus
 } from "../types/purchaseOrder.types";
 
+const VALID_TRANSITIONS: Record<PurchaseOrderStatus, PurchaseOrderStatus[]> = {
+  draft: ["approved", "cancelled"],
+  approved: ["partial_received", "received", "cancelled"],
+  partial_received: ["received", "cancelled"],
+  received: [],
+  cancelled: []
+}
+
+
 export function canChangePurchaseOrderStatus(
-  currentStatus: PurchaseOrderStatus,
+  currentStatus: PurchaseOrderStatus, 
   nextStatus: PurchaseOrderStatus
 ): boolean {
-  if (currentStatus === nextStatus) return true;
+    if (currentStatus === nextStatus) return true;
 
-  if (currentStatus === "draft") {
-    return nextStatus === "approved" || nextStatus === "cancelled";
-  }
-
-  if (currentStatus === "approved") {
-    return nextStatus === "received" || nextStatus === "cancelled";
-  }
-
-  if (currentStatus === "received") {
-    return false;
-  }
-
-  if (currentStatus === "cancelled") {
-    return false;
-  }
-
-  return false;
+    return VALID_TRANSITIONS[currentStatus]?.includes(nextStatus) ?? false;
 }
 
 export function updatePurchaseOrderStatus(

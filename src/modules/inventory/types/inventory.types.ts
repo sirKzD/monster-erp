@@ -29,8 +29,18 @@ export interface StockMovement {
     createdAt: string;
 }
 
+export type SupplierStatus =
+  | "active"
+  | "inactive"
+  | "blacklisted"
+
 export interface Supplier {
     id: string;
     name: string;
     email: string;
+    phone?: string;
+    address?: string;
+    status: SupplierStatus;
+    rating: number;
+    createdAt: string;
 }

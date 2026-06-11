@@ -2,8 +2,7 @@ export {
     createProduct,
     createCategory,
     createWarehouse,
-    createStockMovement,
-    createSupplier
+    createStockMovement
 } from "./services/inventoryService";
 
 export type {
@@ -12,7 +11,8 @@ export type {
     Warehouse,
     StockMovement,
     StockMovementType,
-    Supplier
+    Supplier,
+    SupplierStatus
 } from "./types/inventory.types";
 
 export {
@@ -72,10 +72,21 @@ export {
 export {
   isPurchaseOrderReceivable,
   createGoodsReceipt,
+  createPartialGoodsReceipt,
   createStockMovementsFromReceipt,
   receivePurchaseOrder
 } from "./services/goodsReceiptService";
 
 export type {
-  GoodsReceipt
+  GoodsReceipt,
+  PartialReceiptResult
 } from "./services/goodsReceiptService";
+
+export {
+  createSupplier,
+  updateSupplierStatus,
+  updateSupplierRating,
+  isSupplierActive,
+  filterActiveSuppliers
+} from "./services/supplierService";
+

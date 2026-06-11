@@ -1,6 +1,7 @@
 export type PurchaseOrderStatus =
   | "draft"
   | "approved"
+  | "partial_received"
   | "received"
   | "cancelled";
 
