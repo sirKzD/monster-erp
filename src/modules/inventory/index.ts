@@ -121,3 +121,15 @@ export {
 export type {
   InventoryAuditResult
 } from "./services/inventoryAuditService";
+
+export {
+  calculateReservedStock,
+  calculateAvailableStock,
+  canReserveStock,
+  createStockReservation,
+  releaseStockReservation
+} from "./services/stockReservationService";
+
+export type {
+  StockReservation
+} from "./services/stockReservationService";
