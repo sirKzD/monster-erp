@@ -12,3 +12,11 @@ export interface Employee {
   status: EmployeeStatus;
   joinedAt: string;
 }
+
+export interface Department {
+  id: string;
+  name: string;
+  managerId?: string;
+  status: "active" | "inactive";
+  createdAt: string;
+}
