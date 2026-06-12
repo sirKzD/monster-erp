@@ -20,3 +20,14 @@ export {
 export type {
   Department
 } from "./types/hr.types";
+
+export {
+  createEmployeeAssignment,
+  endEmployeeAssignment,
+  transferEmployeeDepartment,
+  filterActiveAssignments
+} from "./services/employeeAssignmentService";
+
+export type {
+  EmployeeAssignment
+} from "./services/employeeAssignmentService";
