@@ -31,3 +31,30 @@ export {
 export type {
   EmployeeAssignment
 } from "./services/employeeAssignmentService";
+
+export {
+  clockIn,
+  clockOut,
+  calculateWorkedHours,
+  filterOpenAttendances
+} from "./services/attendanceService";
+
+export type {
+  AttendanceRecord
+} from "./types/hr.types";
+
+export {
+  calculateLeaveDays,
+  createLeaveRequest,
+  updateLeaveRequestStatus,
+  approveLeaveRequest,
+  rejectLeaveRequest,
+  cancelLeaveRequest,
+  filterPendingLeaveRequests
+} from "./services/leaveRequestService";
+
+export type {
+  LeaveRequest,
+  LeaveRequestStatus,
+  LeaveType
+} from "./types/hr.types";
