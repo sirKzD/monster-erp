@@ -113,3 +113,18 @@ export interface Payslip {
   issuedAt?: string;
   createdAt: string;
 }
+
+export type PerformanceRating =
+  | "excellent"
+  | "good"
+  | "needs_improvement";
+
+export interface PerformanceReview {
+  id: string;
+  employeeId: string;
+  reviewerId: string;
+  score: number;
+  rating: PerformanceRating;
+  comment: string;
+  reviewedAt: string;
+}

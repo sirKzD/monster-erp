@@ -108,3 +108,15 @@ export type {
   Payslip,
   PayslipStatus
 } from "./types/hr.types";
+
+export {
+  calculatePerformanceRating,
+  createPerformanceReview,
+  filterReviewsByRating,
+  calculateAveragePerformanceScore
+} from "./services/performanceReviewService";
+
+export type {
+  PerformanceRating,
+  PerformanceReview
+} from "./types/hr.types";
