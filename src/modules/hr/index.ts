@@ -120,3 +120,12 @@ export type {
   PerformanceRating,
   PerformanceReview
 } from "./types/hr.types";
+
+export {
+  calculateHrHealthScore,
+  createHrDashboardSummary
+} from "./services/hrDashboardService";
+
+export type {
+  HrDashboardSummary
+} from "./services/hrDashboardService";
