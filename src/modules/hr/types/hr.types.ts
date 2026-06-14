@@ -95,3 +95,21 @@ export interface PayrollResult {
   deduction: number;
   netPay: number;
 }
+
+export type PayslipStatus =
+  | "draft"
+  | "issued"
+  | "cancelled";
+
+export interface Payslip {
+  id: string;
+  employeeId: string;
+  baseSalary: number;
+  overtimePay: number;
+  grossPay: number;
+  deduction: number;
+  netPay: number;
+  status: PayslipStatus;
+  issuedAt?: string;
+  createdAt: string;
+}

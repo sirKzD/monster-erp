@@ -96,3 +96,15 @@ export type {
   PayrollInput,
   PayrollResult
 } from "./types/hr.types";
+
+export {
+  createPayslip,
+  issuePayslip,
+  cancelPayslip,
+  filterIssuedPayslips
+} from "./services/payslipService";
+
+export type {
+  Payslip,
+  PayslipStatus
+} from "./types/hr.types";
