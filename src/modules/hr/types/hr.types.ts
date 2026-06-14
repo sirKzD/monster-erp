@@ -77,3 +77,21 @@ export interface OvertimeRequest {
   createdAt: string;
   reviewedAt?: string;
 }
+
+export interface PayrollInput {
+  employeeId: string;
+  baseSalary: number;
+  attendanceHours: number;
+  overtimeHours: number;
+  overtimeRate: number;
+  deduction: number;
+}
+
+export interface PayrollResult {
+  employeeId: string;
+  baseSalary: number;
+  overtimePay: number;
+  grossPay: number;
+  deduction: number;
+  netPay: number;
+}

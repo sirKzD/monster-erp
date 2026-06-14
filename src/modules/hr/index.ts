@@ -84,3 +84,15 @@ export type {
   OvertimeRequest,
   OvertimeRequestStatus
 } from "./types/hr.types";
+
+export {
+  calculateOvertimePay,
+  calculateGrossPay,
+  calculateNetPay,
+  calculatePayroll
+} from "./services/payrollService";
+
+export type {
+  PayrollInput,
+  PayrollResult
+} from "./types/hr.types";
