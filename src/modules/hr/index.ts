@@ -58,3 +58,14 @@ export type {
   LeaveRequestStatus,
   LeaveType
 } from "./types/hr.types";
+
+export {
+  createLeaveBalance,
+  canUseLeaveBalance,
+  applyApprovedLeaveToBalance,
+  getLeaveBalanceStatus
+} from "./services/leaveBalanceService";
+
+export type {
+  LeaveBalance
+} from "./types/hr.types";

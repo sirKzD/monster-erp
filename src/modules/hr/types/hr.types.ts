@@ -51,3 +51,12 @@ export interface LeaveRequest {
   createdAt: string;
   reviewedAt?: string;
 }
+
+export interface LeaveBalance {
+  id: string;
+  employeeId: string;
+  year: number;
+  annualQuota: number;
+  usedDays: number;
+  remainingDays: number;
+}
