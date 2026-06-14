@@ -129,3 +129,13 @@ export {
 export type {
   HrDashboardSummary
 } from "./services/hrDashboardService";
+
+export {
+  calculateHrGrade,
+  createHrKpi
+} from "./services/hrKpiService";
+
+export type {
+  HrKpi,
+  HrGrade
+} from "./types/hr.types";

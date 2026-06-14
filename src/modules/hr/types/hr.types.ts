@@ -128,3 +128,13 @@ export interface PerformanceReview {
   comment: string;
   reviewedAt: string;
 }
+
+export type HrGrade = "A" | "B" | "C";
+
+export interface HrKpi {
+  attendanceRate: number;
+  leaveUtilization: number;
+  overtimeUtilization: number;
+  performanceScore: number;
+  grade: HrGrade;
+}
