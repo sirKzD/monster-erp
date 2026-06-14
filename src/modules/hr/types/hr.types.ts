@@ -60,3 +60,20 @@ export interface LeaveBalance {
   usedDays: number;
   remainingDays: number;
 }
+
+export type OvertimeRequestStatus =
+  | "pending"
+  | "approved"
+  | "rejected"
+  | "cancelled";
+
+export interface OvertimeRequest {
+  id: string;
+  employeeId: string;
+  startAt: string;
+  endAt: string;
+  reason: string;
+  status: OvertimeRequestStatus;
+  createdAt: string;
+  reviewedAt?: string;
+}

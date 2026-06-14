@@ -69,3 +69,18 @@ export {
 export type {
   LeaveBalance
 } from "./types/hr.types";
+
+export {
+  calculateOvertimeHours,
+  createOvertimeRequest,
+  updateOvertimeRequestStatus,
+  approveOvertimeRequest,
+  rejectOvertimeRequest,
+  cancelOvertimeRequest,
+  filterPendingOvertimeRequests
+} from "./services/overtimeService";
+
+export type {
+  OvertimeRequest,
+  OvertimeRequestStatus
+} from "./types/hr.types";
