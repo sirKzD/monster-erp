@@ -54,3 +54,15 @@ export type {
   TrialBalanceLine,
   TrialBalanceReport
 } from "./types/finance.types";
+
+export {
+  filterLedgerEntriesByAccountType,
+  calculateRevenueTotal,
+  calculateExpenseTotal,
+  getProfitAndLossStatus,
+  generateProfitAndLossReport
+} from "./services/profitAndLossService";
+
+export type {
+  ProfitAndLossReport
+} from "./types/finance.types";

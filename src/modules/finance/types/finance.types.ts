@@ -59,3 +59,10 @@ export interface TrialBalanceReport {
   totalCredit: number;
   isBalanced: boolean;
 }
+
+export interface ProfitAndLossReport {
+  totalRevenue: number;
+  totalExpense: number;
+  netIncome: number;
+  status: "profit" | "loss" | "break_even";
+}
