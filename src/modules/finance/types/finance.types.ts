@@ -144,3 +144,15 @@ export interface Invoice {
   issuedAt?: string;
   paidAt?: string;
 }
+
+export type PaymentStatus =
+  | "completed"
+  | "cancelled";
+
+export interface Payment {
+  id: string;
+  invoiceId: string;
+  amount: number;
+  status: PaymentStatus;
+  paidAt: string;
+}

@@ -132,3 +132,17 @@ export type {
   InvoiceItem,
   InvoiceStatus
 } from "./types/finance.types";
+
+export {
+  calculateTotalPaid,
+  calculateRemainingInvoiceBalance,
+  createPayment,
+  cancelPayment,
+  applyPaymentToInvoice,
+  filterCompletedPayments
+} from "./services/paymentService";
+
+export type {
+  Payment,
+  PaymentStatus
+} from "./types/finance.types";
