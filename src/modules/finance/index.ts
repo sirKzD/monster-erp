@@ -66,3 +66,16 @@ export {
 export type {
   ProfitAndLossReport
 } from "./types/finance.types";
+
+export {
+  filterLedgerEntriesByBalanceSheetType,
+  calculateAssetTotal,
+  calculateLiabilityTotal,
+  calculateEquityTotal,
+  isBalanceSheetBalanced,
+  generateBalanceSheetReport
+} from "./services/balanceSheetService";
+
+export type {
+  BalanceSheetReport
+} from "./types/finance.types";

@@ -66,3 +66,11 @@ export interface ProfitAndLossReport {
   netIncome: number;
   status: "profit" | "loss" | "break_even";
 }
+
+export interface BalanceSheetReport {
+  totalAssets: number;
+  totalLiabilities: number;
+  totalEquity: number;
+  totalLiabilitiesAndEquity: number;
+  isBalanced: boolean;
+}
