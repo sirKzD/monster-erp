@@ -115,3 +115,20 @@ export type {
   FinanceGrade,
   FinanceKpi
 } from "./types/finance.types";
+
+export {
+  calculateInvoiceSubtotal,
+  calculateInvoiceTax,
+  calculateInvoiceTotal,
+  createInvoice,
+  issueInvoice,
+  markInvoiceAsPaid,
+  cancelInvoice,
+  filterInvoicesByStatus
+} from "./services/invoiceService";
+
+export type {
+  Invoice,
+  InvoiceItem,
+  InvoiceStatus
+} from "./types/finance.types";

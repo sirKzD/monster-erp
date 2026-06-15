@@ -119,3 +119,28 @@ export interface FinanceKpi {
   cashFlowRatio: number;
   grade: FinanceGrade;
 }
+
+export type InvoiceStatus =
+  | "draft"
+  | "issued"
+  | "paid"
+  | "cancelled";
+
+export interface InvoiceItem {
+  description: string;
+  quantity: number;
+  unitPrice: number;
+}
+
+export interface Invoice {
+  id: string;
+  customerId: string;
+  items: InvoiceItem[];
+  subtotal: number;
+  tax: number;
+  total: number;
+  status: InvoiceStatus;
+  createdAt: string;
+  issuedAt?: string;
+  paidAt?: string;
+}
