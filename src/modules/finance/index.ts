@@ -93,3 +93,12 @@ export type {
   CashFlowItem,
   CashFlowReport
 } from "./types/finance.types";
+
+export {
+  calculateFinanceHealthScore,
+  createFinanceDashboardSummary
+} from "./services/financeDashboardService";
+
+export type {
+  FinanceDashboardSummary
+} from "./types/finance.types";

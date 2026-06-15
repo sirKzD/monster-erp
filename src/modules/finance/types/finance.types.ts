@@ -96,3 +96,14 @@ export interface CashFlowReport {
   openingCashBalance: number;
   endingCashBalance: number;
 }
+
+export interface FinanceDashboardSummary {
+  totalRevenue: number;
+  totalExpense: number;
+  netIncome: number;
+  totalAssets: number;
+  totalLiabilities: number;
+  totalEquity: number;
+  netCashFlow: number;
+  financeHealthScore: number;
+}
