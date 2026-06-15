@@ -102,3 +102,16 @@ export {
 export type {
   FinanceDashboardSummary
 } from "./types/finance.types";
+
+export {
+  calculateProfitMargin,
+  calculateDebtRatio,
+  calculateCashFlowRatio,
+  calculateFinanceGrade,
+  createFinanceKpi
+} from "./services/financeKpiService";
+
+export type {
+  FinanceGrade,
+  FinanceKpi
+} from "./types/finance.types";

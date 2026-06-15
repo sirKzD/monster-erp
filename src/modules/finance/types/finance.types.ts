@@ -107,3 +107,15 @@ export interface FinanceDashboardSummary {
   netCashFlow: number;
   financeHealthScore: number;
 }
+
+export type FinanceGrade =
+  | "A"
+  | "B"
+  | "C";
+
+export interface FinanceKpi {
+  profitMargin: number;
+  debtRatio: number;
+  cashFlowRatio: number;
+  grade: FinanceGrade;
+}
