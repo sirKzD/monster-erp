@@ -40,3 +40,17 @@ export {
 export type {
   LedgerEntry
 } from "./types/finance.types";
+
+export {
+  groupLedgerEntriesByAccount,
+  createTrialBalanceLine,
+  calculateTrialBalanceTotalDebit,
+  calculateTrialBalanceTotalCredit,
+  isTrialBalanceBalanced,
+  generateTrialBalance
+} from "./services/trialBalanceService";
+
+export type {
+  TrialBalanceLine,
+  TrialBalanceReport
+} from "./types/finance.types";

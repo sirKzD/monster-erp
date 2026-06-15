@@ -46,3 +46,16 @@ export interface LedgerEntry {
   description: string;
   postedAt: string;
 }
+
+export interface TrialBalanceLine {
+  accountCode: string;
+  debit: number;
+  credit: number;
+}
+
+export interface TrialBalanceReport {
+  lines: TrialBalanceLine[];
+  totalDebit: number;
+  totalCredit: number;
+  isBalanced: boolean;
+}
