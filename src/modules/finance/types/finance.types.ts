@@ -74,3 +74,25 @@ export interface BalanceSheetReport {
   totalLiabilitiesAndEquity: number;
   isBalanced: boolean;
 }
+
+export type CashFlowCategory =
+  | "operating"
+  | "investing"
+  | "financing";
+
+export interface CashFlowItem {
+  id: string;
+  category: CashFlowCategory;
+  description: string;
+  amount: number;
+  occurredAt: string;
+}
+
+export interface CashFlowReport {
+  operatingCashFlow: number;
+  investingCashFlow: number;
+  financingCashFlow: number;
+  netCashFlow: number;
+  openingCashBalance: number;
+  endingCashBalance: number;
+}

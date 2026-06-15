@@ -79,3 +79,17 @@ export {
 export type {
   BalanceSheetReport
 } from "./types/finance.types";
+
+export {
+  createCashFlowItem,
+  filterCashFlowItemsByCategory,
+  calculateCashFlowTotalByCategory,
+  calculateNetCashFlow,
+  generateCashFlowReport
+} from "./services/cashFlowService";
+
+export type {
+  CashFlowCategory,
+  CashFlowItem,
+  CashFlowReport
+} from "./types/finance.types";
