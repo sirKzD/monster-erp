@@ -227,3 +227,40 @@ export interface BankReconciliationSummary {
   totalMatchedAmount: number;
   totalUnmatchedAmount: number;
 }
+
+export type BudgetStatus =
+  | "active"
+  | "closed";
+
+export interface Budget {
+  id: string;
+  accountCode: string;
+  period: string;
+  plannedAmount: number;
+  status: BudgetStatus;
+  createdAt: string;
+}
+
+export interface BudgetVariance {
+  accountCode: string;
+  period: string;
+  plannedAmount: number;
+  actualAmount: number;
+  variance: number;
+  status: "under_budget" | "on_budget" | "over_budget";
+}
+
+export type FixedAssetStatus =
+  | "active"
+  | "disposed";
+
+export interface FixedAsset {
+  id: string;
+  name: string;
+  acquisitionCost: number;
+  residualValue: number;
+  usefulLifeMonths: number;
+  status: FixedAssetStatus;
+  acquiredAt: string;
+  disposedAt?: string;
+}

@@ -183,3 +183,33 @@ export type {
   BankTransactionStatus,
   BankReconciliationSummary
 } from "./types/finance.types";
+
+export {
+  createBudget,
+  closeBudget,
+  calculateActualAmountForBudget,
+  calculateBudgetVariance,
+  getBudgetVarianceStatus,
+  createBudgetVariance,
+  filterActiveBudgets
+} from "./services/budgetService";
+
+export type {
+  Budget,
+  BudgetStatus,
+  BudgetVariance
+} from "./types/finance.types";
+
+export {
+  createFixedAsset,
+  calculateDepreciableAmount,
+  calculateMonthlyDepreciation,
+  disposeFixedAsset,
+  filterActiveFixedAssets,
+  calculateTotalFixedAssetValue
+} from "./services/fixedAssetService";
+
+export type {
+  FixedAsset,
+  FixedAssetStatus
+} from "./types/finance.types";
