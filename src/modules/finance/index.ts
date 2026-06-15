@@ -146,3 +146,40 @@ export type {
   Payment,
   PaymentStatus
 } from "./types/finance.types";
+
+export {
+  calculateInvoicePaidAmount,
+  calculateInvoiceOutstanding,
+  isInvoiceOverdue,
+  buildReceivableSummary
+} from "./services/receivableSummaryService";
+
+export {
+  calculateBillPaidAmount,
+  calculateBillOutstanding,
+  isBillOverdue,
+  buildPayableSummary
+} from "./services/payableSummaryService";
+
+export type {
+  VendorBill,
+  VendorBillStatus,
+  BillPayment,
+  BillPaymentStatus,
+  PayableSummary
+} from "./types/finance.types";
+
+export {
+  createBankTransaction,
+  findMatchingPayment,
+  matchBankTransactionWithPayment,
+  reconcileBankTransaction,
+  filterUnmatchedBankTransactions,
+  buildBankReconciliationSummary
+} from "./services/bankReconciliationService";
+
+export type {
+  BankTransaction,
+  BankTransactionStatus,
+  BankReconciliationSummary
+} from "./types/finance.types";

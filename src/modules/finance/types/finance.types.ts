@@ -143,6 +143,7 @@ export interface Invoice {
   createdAt: string;
   issuedAt?: string;
   paidAt?: string;
+  dueDate?: string;
 }
 
 export type PaymentStatus =
@@ -155,4 +156,74 @@ export interface Payment {
   amount: number;
   status: PaymentStatus;
   paidAt: string;
+}
+
+export interface ReceivableSummary {
+  totalInvoiced: number;
+  totalPaid: number;
+  outstandingBalance: number;
+  overdueBalance: number;
+  overdueInvoiceCount: number;
+  collectionRate: number;
+}
+
+export type VendorBillStatus =
+  | "draft"
+  | "issued"
+  | "paid"
+  | "cancelled";
+
+export interface VendorBill {
+  id: string;
+  vendorId: string;
+  total: number;
+  status: VendorBillStatus;
+  createdAt: string;
+  dueDate?: string;
+  paidAt?: string;
+}
+
+export type BillPaymentStatus =
+  | "completed"
+  | "cancelled";
+
+export interface BillPayment {
+  id: string;
+  billId: string;
+  amount: number;
+  status: BillPaymentStatus;
+  paidAt: string;
+}
+
+export interface PayableSummary {
+  totalBilled: number;
+  totalPaid: number;
+  outstandingPayable: number;
+  overdueBalance: number;
+  overdueBillCount: number;
+  paymentRate: number;
+}
+
+export type BankTransactionStatus =
+  | "unmatched"
+  | "matched"
+  | "reconciled";
+
+export interface BankTransaction {
+  id: string;
+  reference: string;
+  description: string;
+  amount: number;
+  occurredAt: string;
+  status: BankTransactionStatus;
+  matchedPaymentId?: string;
+}
+
+export interface BankReconciliationSummary {
+  totalTransactions: number;
+  matchedTransactions: number;
+  unmatchedTransactions: number;
+  reconciledTransactions: number;
+  totalMatchedAmount: number;
+  totalUnmatchedAmount: number;
 }
