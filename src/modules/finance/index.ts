@@ -274,3 +274,33 @@ export type {
   ExchangeRate,
   CurrencyConversion
 } from "./types/finance.types";
+
+export {
+  createFinancialClosing,
+  canCloseFinancialPeriod,
+  closeFinancialPeriod,
+  reopenFinancialClosing,
+  buildFinancialClosingSummary,
+  filterClosedFinancialClosings
+} from "./services/financialClosingService";
+
+export type {
+  FinancialClosing,
+  FinancialClosingStatus,
+  FinancialClosingSummary
+} from "./types/finance.types";
+
+export {
+  calculateCurrentRatio,
+  calculateFinancialDebtRatio,
+  calculateNetProfitMargin,
+  calculateReturnOnAssets,
+  calculateReturnOnEquity,
+  calculateFinancialRatioGrade,
+  createFinancialRatioAnalysis
+} from "./services/financialRatioAnalysisService";
+
+export type {
+  FinancialRatioAnalysis,
+  FinancialRatioGrade
+} from "./types/finance.types";

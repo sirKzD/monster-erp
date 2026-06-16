@@ -375,3 +375,42 @@ export interface CurrencyConversion {
   convertedAmount: number;
   rate: number;
 }
+
+export type FinancialClosingStatus =
+  | "draft"
+  | "closed"
+  | "reopened";
+
+export interface FinancialClosing {
+  id: string;
+  periodId: string;
+  trialBalanceTotalDebit: number;
+  trialBalanceTotalCredit: number;
+  status: FinancialClosingStatus;
+  closedAt?: string;
+  reopenedAt?: string;
+  createdAt: string;
+}
+
+export interface FinancialClosingSummary {
+  periodId: string;
+  isTrialBalanceBalanced: boolean;
+  totalDebit: number;
+  totalCredit: number;
+  status: FinancialClosingStatus;
+}
+
+export type FinancialRatioGrade =
+  | "excellent"
+  | "healthy"
+  | "warning"
+  | "critical";
+
+export interface FinancialRatioAnalysis {
+  currentRatio: number;
+  debtRatio: number;
+  netProfitMargin: number;
+  returnOnAssets: number;
+  returnOnEquity: number;
+  grade: FinancialRatioGrade;
+}
