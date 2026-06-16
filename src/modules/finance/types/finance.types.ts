@@ -272,3 +272,106 @@ export interface AssetDepreciationSchedule {
   accumulatedDepreciation: number;
   bookValue: number;
 }
+
+export type CostCenterStatus =
+  | "active"
+  | "inactive";
+
+export interface CostCenter {
+  id: string;
+  code: string;
+  name: string;
+  status: CostCenterStatus;
+  createdAt: string;
+}
+
+export interface CostCenterAllocation {
+  id: string;
+  costCenterCode: string;
+  accountCode: string;
+  amount: number;
+  description: string;
+  allocatedAt: string;
+}
+
+export interface CostCenterSummary {
+  costCenterCode: string;
+  totalAllocated: number;
+  allocationCount: number;
+}
+
+export type TaxType =
+  | "VAT"
+  | "WITHHOLDING";
+
+export interface TaxRule {
+  id: string;
+  code: string;
+  name: string;
+  type: TaxType;
+  rate: number;
+  isActive: boolean;
+}
+
+export interface TaxCalculation {
+  subtotal: number;
+  taxAmount: number;
+  totalAmount: number;
+}
+
+export interface TaxSummary {
+  taxRuleId: string;
+  taxRuleName: string;
+  transactionCount: number;
+  taxableAmount: number;
+  taxAmount: number;
+}
+
+export type AccountingPeriodStatus =
+  | "open"
+  | "closed"
+  | "locked";
+
+export interface AccountingPeriod {
+  id: string;
+  name: string;
+  startDate: string;
+  endDate: string;
+  status: AccountingPeriodStatus;
+  createdAt: string;
+}
+
+export interface FiscalYear {
+  id: string;
+  year: number;
+  startDate: string;
+  endDate: string;
+  periods: AccountingPeriod[];
+  createdAt: string;
+}
+
+export type CurrencyStatus =
+  | "active"
+  | "inactive";
+
+export interface Currency {
+  code: string;
+  name: string;
+  symbol: string;
+  status: CurrencyStatus;
+}
+
+export interface ExchangeRate {
+  fromCurrency: string;
+  toCurrency: string;
+  rate: number;
+  effectiveDate: string;
+}
+
+export interface CurrencyConversion {
+  fromCurrency: string;
+  toCurrency: string;
+  originalAmount: number;
+  convertedAmount: number;
+  rate: number;
+}

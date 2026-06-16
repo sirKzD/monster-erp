@@ -224,3 +224,53 @@ export {
 export type {
   AssetDepreciationSchedule
 } from "./types/finance.types";
+
+export {
+  createCostCenter,
+  deactivateCostCenter,
+  allocateCostToCenter,
+  filterAllocationsByCostCenter,
+  calculateCostCenterTotal,
+  buildCostCenterSummary
+} from "./services/costCenterService";
+
+export type {
+  CostCenter,
+  CostCenterStatus,
+  CostCenterAllocation,
+  CostCenterSummary
+} from "./types/finance.types";
+
+export * from "./services/taxManagementService";
+
+export {
+  createAccountingPeriod,
+  closeAccountingPeriod,
+  lockAccountingPeriod,
+  isDateWithinAccountingPeriod,
+  isPostingAllowed,
+  findAccountingPeriodByDate,
+  createFiscalYear
+} from "./services/accountingPeriodService";
+
+export type {
+  AccountingPeriod,
+  AccountingPeriodStatus,
+  FiscalYear
+} from "./types/finance.types";
+
+export {
+  createCurrency,
+  deactivateCurrency,
+  createExchangeRate,
+  findExchangeRate,
+  convertCurrency,
+  filterActiveCurrencies
+} from "./services/currencyManagementService";
+
+export type {
+  Currency,
+  CurrencyStatus,
+  ExchangeRate,
+  CurrencyConversion
+} from "./types/finance.types";
