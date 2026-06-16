@@ -264,3 +264,11 @@ export interface FixedAsset {
   acquiredAt: string;
   disposedAt?: string;
 }
+
+export interface AssetDepreciationSchedule {
+  assetId: string;
+  month: number;
+  depreciationAmount: number;
+  accumulatedDepreciation: number;
+  bookValue: number;
+}

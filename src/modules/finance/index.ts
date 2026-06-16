@@ -213,3 +213,14 @@ export type {
   FixedAsset,
   FixedAssetStatus
 } from "./types/finance.types";
+
+export {
+  calculateAccumulatedDepreciation,
+  calculateBookValue,
+  generateDepreciationSchedule,
+  getDepreciationAtMonth
+} from "./services/assetDepreciationService";
+
+export type {
+  AssetDepreciationSchedule
+} from "./types/finance.types";
