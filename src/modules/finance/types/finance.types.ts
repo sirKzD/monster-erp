@@ -475,3 +475,23 @@ export interface ReceivableAgingSummary {
   bucket90Plus: number;
   totalOutstanding: number;
 }
+
+export interface PayableAgingItem {
+  billId: string;
+  vendorId: string;
+  vendorName: string;
+  billDate: string;
+  dueDate: string;
+  outstandingAmount: number;
+  daysOverdue: number;
+  bucket: AgingBucket;
+}
+
+export interface PayableAgingSummary {
+  current: number;
+  bucket1To30: number;
+  bucket31To60: number;
+  bucket61To90: number;
+  bucket90Plus: number;
+  totalOutstanding: number;
+}

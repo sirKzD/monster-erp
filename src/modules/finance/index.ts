@@ -341,3 +341,5 @@ export {
   calculateReceivableAgingPercentage,
   getReceivableHighestRiskBucket
 } from "./services/receivableAgingService";
+
+export * from "./services/payableAgingService";
