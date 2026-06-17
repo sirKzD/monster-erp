@@ -304,3 +304,40 @@ export type {
   FinancialRatioAnalysis,
   FinancialRatioGrade
 } from "./types/finance.types";
+
+export {
+  calculateCustomerInvoicePaidAmount,
+  buildCustomerLedgerEntries,
+  calculateCustomerOutstandingBalance,
+  buildCustomerLedgerSummary,
+  filterCustomersWithOutstandingBalance
+} from "./services/customerLedgerService";
+
+export type {
+  CustomerLedgerEntry,
+  CustomerLedgerSummary
+} from "./types/finance.types";
+
+export {
+  calculateVendorBillPaidAmount,
+  buildVendorLedgerEntries,
+  calculateVendorOutstandingBalance,
+  buildVendorLedgerSummary,
+  filterVendorsWithOutstandingBalance
+} from "./services/vendorLedgerService";
+
+export type {
+  VendorLedgerEntry,
+  VendorLedgerSummary
+} from "./types/finance.types";
+
+export {
+  calculateReceivableDaysOverdue,
+  determineReceivableAgingBucket,
+  calculateReceivableInvoicePaidAmount,
+  createReceivableAgingItem,
+  buildReceivableAgingItems,
+  buildReceivableAgingSummary,
+  calculateReceivableAgingPercentage,
+  getReceivableHighestRiskBucket
+} from "./services/receivableAgingService";

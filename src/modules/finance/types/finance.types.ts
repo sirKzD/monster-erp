@@ -414,3 +414,64 @@ export interface FinancialRatioAnalysis {
   returnOnEquity: number;
   grade: FinancialRatioGrade;
 }
+
+export interface CustomerLedgerEntry {
+  customerId: string;
+  invoiceId: string;
+  invoiceTotal: number;
+  paidAmount: number;
+  outstandingAmount: number;
+  status: InvoiceStatus;
+}
+
+export interface CustomerLedgerSummary {
+  customerId: string;
+  totalInvoiced: number;
+  totalPaid: number;
+  outstandingBalance: number;
+  invoiceCount: number;
+}
+
+export interface VendorLedgerEntry {
+  vendorId: string;
+  billId: string;
+  billTotal: number;
+  paidAmount: number;
+  outstandingAmount: number;
+  status: VendorBillStatus;
+}
+
+export interface VendorLedgerSummary {
+  vendorId: string;
+  totalBilled: number;
+  totalPaid: number;
+  outstandingBalance: number;
+  billCount: number;
+}
+
+export type AgingBucket =
+  | "current"
+  | "1_30"
+  | "31_60"
+  | "61_90"
+  | "90_plus";
+
+export interface ReceivableAgingItem {
+  invoiceId: string;
+  customerId: string;
+  customerName: string;
+  invoiceDate: string;
+  dueDate: string;
+  outstandingAmount: number;
+  daysOverdue: number;
+  bucket: AgingBucket;
+}
+
+export interface ReceivableAgingSummary {
+  current: number;
+  bucket1To30: number;
+  bucket31To60: number;
+  bucket61To90: number;
+  bucket90Plus: number;
+  totalOutstanding: number;
+}
