@@ -836,3 +836,70 @@ export interface CapitalGainSummary {
   totalGain: number;
   gainPercentage: number;
 }
+
+export interface InvestmentPerformance {
+  id: string;
+  portfolioId: string;
+
+  evaluationDate: string;
+
+  totalInvestedAmount: number;
+  currentMarketValue: number;
+
+  realizedGain: number;
+  unrealizedGain: number;
+  dividendIncome: number;
+
+  totalReturn: number;
+  totalReturnPercentage: number;
+  annualizedReturnPercentage: number;
+
+  createdAt: string;
+  updatedAt: string;
+}
+
+
+export interface InvestmentPerformanceSummary {
+  totalPortfolios: number;
+
+  totalInvestedAmount: number;
+  totalMarketValue: number;
+
+  totalRealizedGain: number;
+  totalUnrealizedGain: number;
+  totalDividendIncome: number;
+
+  totalReturn: number;
+
+  averageReturnPercentage: number;
+  averageAnnualizedReturnPercentage: number;
+
+  bestPerformingPortfolioId?: string;
+}
+
+export type InvestmentRiskLevel =
+  | "low"
+  | "medium"
+  | "high";
+
+export interface InvestmentRiskAssessment {
+  id: string;
+  portfolioId: string;
+  riskScore: number;
+  riskLevel: InvestmentRiskLevel;
+  volatilityPercentage: number;
+  maxDrawdownPercentage: number;
+  concentrationRiskPercentage: number;
+  liquidityRiskLevel: InvestmentRiskLevel;
+  evaluationDate: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface InvestmentRiskSummary {
+  totalAssessments: number;
+  averageRiskScore: number;
+  lowRiskCount: number;
+  mediumRiskCount: number;
+  highRiskCount: number;
+}
