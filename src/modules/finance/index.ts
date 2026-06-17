@@ -343,3 +343,9 @@ export {
 } from "./services/receivableAgingService";
 
 export * from "./services/payableAgingService";
+
+export * from "./services/departmentBudgetService";
+
+export * from "./services/costAllocationService";
+
+export * from "./services/expenseClaimService";

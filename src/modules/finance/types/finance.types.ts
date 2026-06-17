@@ -495,3 +495,93 @@ export interface PayableAgingSummary {
   bucket90Plus: number;
   totalOutstanding: number;
 }
+
+export type BudgetVarianceStatus =
+  | "under_budget"
+  | "on_budget"
+  | "over_budget";
+
+export interface BudgetVarianceAnalysis {
+  budgetId: string;
+  accountCode: string;
+  period: string;
+  plannedAmount: number;
+  actualAmount: number;
+  varianceAmount: number;
+  variancePercentage: number;
+  status: BudgetVarianceStatus;
+}
+
+export interface BudgetVarianceSummary {
+  totalPlanned: number;
+  totalActual: number;
+  totalVariance: number;
+  totalVariancePercentage: number;
+  underBudgetCount: number;
+  onBudgetCount: number;
+  overBudgetCount: number;
+}
+
+export type DepartmentBudgetStatus =
+  | "active"
+  | "closed";
+
+export interface DepartmentBudget {
+  id: string;
+  departmentId: string;
+  departmentName: string;
+  period: string;
+  allocatedBudget: number;
+  usedBudget: number;
+  status: DepartmentBudgetStatus;
+  createdAt: string;
+}
+
+export interface DepartmentBudgetSummary {
+  departmentId: string;
+  departmentName: string;
+  allocatedBudget: number;
+  usedBudget: number;
+  remainingBudget: number;
+  utilizationRate: number;
+}
+
+export interface CostAllocation {
+  id: string;
+  sourceAccountCode: string;
+  targetCostCenterCode: string;
+  allocationPercentage: number;
+  allocatedAmount: number;
+  allocatedAt: string;
+}
+
+export interface CostAllocationSummary {
+  sourceAccountCode: string;
+  totalAllocatedAmount: number;
+  allocationCount: number;
+}
+
+export type ExpenseClaimStatus =
+  | "submitted"
+  | "approved"
+  | "rejected"
+  | "paid";
+
+export interface ExpenseClaim {
+  id: string;
+  employeeId: string;
+  category: string;
+  description: string;
+  amount: number;
+  status: ExpenseClaimStatus;
+  submittedAt: string;
+  approvedAt?: string;
+  paidAt?: string;
+}
+
+export interface ExpenseClaimSummary {
+  totalClaims: number;
+  totalAmount: number;
+  approvedAmount: number;
+  paidAmount: number;
+}
