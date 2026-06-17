@@ -585,3 +585,93 @@ export interface ExpenseClaimSummary {
   approvedAmount: number;
   paidAmount: number;
 }
+
+export type CashTransactionType =
+  | "inflow"
+  | "outflow";
+
+export interface CashTransaction {
+  id: string;
+  description: string;
+  amount: number;
+  type: CashTransactionType;
+  transactionDate: string;
+}
+
+export interface CashPosition {
+  openingBalance: number;
+  totalInflow: number;
+  totalOutflow: number;
+  closingBalance: number;
+}
+
+export interface DailyCashSummary {
+  date: string;
+  inflow: number;
+  outflow: number;
+  netCashFlow: number;
+}
+
+export interface CashManagementSummary {
+  totalTransactions: number;
+  totalInflow: number;
+  totalOutflow: number;
+  endingCashBalance: number;
+}
+
+export type PettyCashStatus =
+  | "active"
+  | "closed";
+
+export interface PettyCashFund {
+  id: string;
+  name: string;
+  openingBalance: number;
+  currentBalance: number;
+  status: PettyCashStatus;
+  createdAt: string;
+}
+
+export interface PettyCashExpense {
+  id: string;
+  fundId: string;
+  description: string;
+  amount: number;
+  expenseDate: string;
+}
+
+export interface PettyCashReplenishment {
+  id: string;
+  fundId: string;
+  amount: number;
+  replenishedAt: string;
+}
+
+export interface PettyCashSummary {
+  fundId: string;
+  openingBalance: number;
+  currentBalance: number;
+  totalExpenses: number;
+  totalReplenishments: number;
+}
+
+export interface CashForecastEntry {
+  date: string;
+  expectedInflow: number;
+  expectedOutflow: number;
+}
+
+export interface CashForecastResult {
+  date: string;
+  openingBalance: number;
+  inflow: number;
+  outflow: number;
+  closingBalance: number;
+}
+
+export interface CashForecastSummary {
+  openingBalance: number;
+  totalInflow: number;
+  totalOutflow: number;
+  endingBalance: number;
+}

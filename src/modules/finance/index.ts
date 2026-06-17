@@ -349,3 +349,9 @@ export * from "./services/departmentBudgetService";
 export * from "./services/costAllocationService";
 
 export * from "./services/expenseClaimService";
+
+export * from "./services/cashManagementService";
+
+export * from "./services/pettyCashService";
+
+export * from "./services/cashForecastService";
