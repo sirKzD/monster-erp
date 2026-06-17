@@ -675,3 +675,164 @@ export interface CashForecastSummary {
   totalOutflow: number;
   endingBalance: number;
 }
+
+export type BankAccountStatus =
+  | "active"
+  | "inactive"
+  | "closed";
+
+export interface BankAccount {
+  id: string;
+  accountName: string;
+  bankName: string;
+  accountNumber: string;
+  currencyCode: string;
+  balance: number;
+  status: BankAccountStatus;
+  createdAt: string;
+}
+
+export interface BankAccountSummary {
+  totalAccounts: number;
+  activeAccounts: number;
+  inactiveAccounts: number;
+  totalBalance: number;
+}
+
+export type FundTransferStatus =
+  | "draft"
+  | "completed"
+  | "cancelled";
+
+export interface FundTransfer {
+  id: string;
+  fromBankAccountId: string;
+  toBankAccountId: string;
+  amount: number;
+  description: string;
+  transferredAt: string;
+  status: FundTransferStatus;
+}
+
+export interface FundTransferSummary {
+  totalTransfers: number;
+  completedTransfers: number;
+  cancelledTransfers: number;
+  totalTransferredAmount: number;
+}
+
+export type TreasuryPositionStatus =
+  | "healthy"
+  | "warning"
+  | "critical";
+
+export interface TreasuryPosition {
+  totalCash: number;
+  totalBankBalance: number;
+  totalAvailableFunds: number;
+  minimumLiquidityTarget: number;
+  status: TreasuryPositionStatus;
+}
+
+export interface TreasurySummary {
+  totalCashAccounts: number;
+  totalFunds: number;
+  liquidityRatio: number;
+  status: TreasuryPositionStatus;
+}
+
+export type LoanStatus =
+  | "active"
+  | "closed";
+
+export interface Loan {
+  id: string;
+  lenderName: string;
+  principalAmount: number;
+  outstandingAmount: number;
+  interestRate: number;
+  startDate: string;
+  maturityDate: string;
+  status: LoanStatus;
+}
+
+export interface LoanSummary {
+  totalPrincipal: number;
+  totalOutstanding: number;
+  activeLoanCount: number;
+  closedLoanCount: number;
+}
+
+export type LoanRepaymentStatus =
+  | "scheduled"
+  | "paid"
+  | "overdue";
+
+export interface LoanRepayment {
+  id: string;
+  loanId: string;
+  dueDate: string;
+  principalAmount: number;
+  interestAmount: number;
+  totalAmount: number;
+  status: LoanRepaymentStatus;
+}
+
+export interface LoanRepaymentSummary {
+  totalPrincipalPaid: number;
+  totalInterestPaid: number;
+  totalPaid: number;
+  paidCount: number;
+  overdueCount: number;
+}
+
+export type InvestmentStatus =
+  | "active"
+  | "sold";
+
+export interface Investment {
+  id: string;
+  name: string;
+  type: string;
+  initialAmount: number;
+  currentValue: number;
+  acquiredAt: string;
+  status: InvestmentStatus;
+}
+
+export interface InvestmentSummary {
+  totalInitialAmount: number;
+  totalCurrentValue: number;
+  totalGainLoss: number;
+  returnPercentage: number;
+  activeInvestmentCount: number;
+  soldInvestmentCount: number;
+}
+
+export interface DividendPayment {
+  id: string;
+  investmentId: string;
+  paymentDate: string;
+  amount: number;
+}
+
+export interface DividendSummary {
+  totalDividend: number;
+  paymentCount: number;
+  averageDividend: number;
+}
+
+export interface CapitalGainRecord {
+  id: string;
+  investmentId: string;
+  purchaseAmount: number;
+  currentValue: number;
+  realized: boolean;
+}
+
+export interface CapitalGainSummary {
+  totalCost: number;
+  totalMarketValue: number;
+  totalGain: number;
+  gainPercentage: number;
+}

@@ -355,3 +355,19 @@ export * from "./services/cashManagementService";
 export * from "./services/pettyCashService";
 
 export * from "./services/cashForecastService";
+
+export * from "./services/bankAccountService";
+
+export * from "./services/fundTransferService";
+
+export * from "./services/treasuryManagementService";
+
+export * from "./services/loanManagementService";
+
+export * from "./services/loanRepaymentService";
+
+export * from "./services/investmentPortfolioService";
+
+export * from "./services/dividendManagementService";
+
+export * from "./services/capitalGainAnalysisService";
