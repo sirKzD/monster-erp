@@ -903,3 +903,25 @@ export interface InvestmentRiskSummary {
   mediumRiskCount: number;
   highRiskCount: number;
 }
+
+export interface InvestmentBenchmark {
+  id: string;
+  portfolioId: string;
+  benchmarkName: string;
+  benchmarkReturnPercentage: number;
+  portfolioReturnPercentage: number;
+  excessReturnPercentage: number;
+  trackingErrorPercentage: number;
+  evaluationDate: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface InvestmentBenchmarkSummary {
+  totalBenchmarks: number;
+  averagePortfolioReturn: number;
+  averageBenchmarkReturn: number;
+  averageExcessReturn: number;
+  outperformCount: number;
+  underperformCount: number;
+}

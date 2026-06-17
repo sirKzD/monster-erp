@@ -373,3 +373,5 @@ export * from "./services/dividendManagementService";
 export * from "./services/capitalGainAnalysisService";
 
 export * from "./services/investmentRiskAssessmentService";
+
+export * from "./services/investmentBenchmarkService";
