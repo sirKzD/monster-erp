@@ -1358,3 +1358,46 @@ export interface RevenueForecastSummary {
   averageGrowthPercentage: number;
   projectedIncreaseAmount: number;
 }
+
+export type BreakEvenStatus =
+  | "DRAFT"
+  | "ANALYZED"
+  | "APPROVED";
+
+export interface BreakEvenAnalysis {
+  id: string;
+  name: string;
+
+  fixedCosts: number;
+  variableCostPerUnit: number;
+  sellingPricePerUnit: number;
+
+  targetProfit?: number;
+
+  status: BreakEvenStatus;
+
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface BreakEvenResult {
+  breakEvenUnits: number;
+  breakEvenRevenue: number;
+
+  contributionMarginPerUnit: number;
+  contributionMarginRatio: number;
+
+  marginOfSafetyRevenue: number;
+  marginOfSafetyPercentage: number;
+
+  targetProfitUnits: number;
+  targetProfitRevenue: number;
+}
+
+export interface BreakEvenSummary {
+  totalAnalyses: number;
+
+  averageBreakEvenUnits: number;
+  averageContributionMarginRatio: number;
+  averageMarginOfSafetyPercentage: number;
+}
