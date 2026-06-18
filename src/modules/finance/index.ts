@@ -383,3 +383,5 @@ export * from "./services/liquidityAnalysisService";
 export * from "./services/cashConversionCycleAnalysisService";
 
 export * from "./services/debtAnalysisService";
+
+export * from "./services/solvencyAnalysisService";

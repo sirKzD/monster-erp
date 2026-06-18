@@ -1105,3 +1105,47 @@ export interface DebtAnalysisSummary {
   interestCoverageRatio: number;
   riskLevel: DebtRiskLevel;
 }
+
+export type SolvencyLevel =
+  | "EXCELLENT"
+  | "GOOD"
+  | "MODERATE"
+  | "WEAK"
+  | "CRITICAL";
+
+export interface SolvencyAnalysis {
+  id: string;
+  companyName: string;
+
+  totalAssets: number;
+  totalLiabilities: number;
+  totalEquity: number;
+
+  debtToAssetRatio: number;
+  debtToEquityRatio: number;
+  equityRatio: number;
+  solvencyRatio: number;
+
+  solvencyLevel: SolvencyLevel;
+
+  analysisDate: string;
+  notes?: string;
+
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface SolvencyAnalysisSummary {
+  analysisCount: number;
+
+  averageDebtToAssetRatio: number;
+  averageDebtToEquityRatio: number;
+  averageEquityRatio: number;
+  averageSolvencyRatio: number;
+
+  healthyCompanies: number;
+  riskyCompanies: number;
+
+  highestSolvencyRatio: number;
+  lowestSolvencyRatio: number;
+}
