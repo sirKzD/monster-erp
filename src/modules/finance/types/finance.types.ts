@@ -1149,3 +1149,212 @@ export interface SolvencyAnalysisSummary {
   highestSolvencyRatio: number;
   lowestSolvencyRatio: number;
 }
+
+export type FinancialHealthGrade =
+  | "POOR"
+  | "FAIR"
+  | "GOOD"
+  | "EXCELLENT";
+
+export interface FinancialHealthScore {
+  id: string;
+  companyName: string;
+
+  liquidityScore: number;
+  profitabilityScore: number;
+  solvencyScore: number;
+  efficiencyScore: number;
+  cashFlowScore: number;
+
+  overallScore: number;
+  grade: FinancialHealthGrade;
+
+  assessmentDate: string;
+  notes?: string;
+
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface FinancialHealthScoreSummary {
+  totalAssessments: number;
+  averageScore: number;
+  highestScore: number;
+  lowestScore: number;
+
+  poorCount: number;
+  fairCount: number;
+  goodCount: number;
+  excellentCount: number;
+}
+
+export type CreditRiskLevel =
+  | "LOW"
+  | "MODERATE"
+  | "HIGH"
+  | "CRITICAL";
+
+export interface CreditRiskAnalysis {
+  id: string;
+  customerId: string;
+  customerName: string;
+
+  outstandingBalance: number;
+  overdueBalance: number;
+  overdueDays: number;
+  paymentHistoryScore: number;
+  creditLimit: number;
+
+  creditUtilizationRatio: number;
+  riskScore: number;
+  riskLevel: CreditRiskLevel;
+
+  analysisDate: string;
+  notes?: string;
+
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CreditRiskAnalysisSummary {
+  totalCustomers: number;
+  averageRiskScore: number;
+  lowRiskCount: number;
+  moderateRiskCount: number;
+  highRiskCount: number;
+  criticalRiskCount: number;
+  totalOutstandingBalance: number;
+  totalOverdueBalance: number;
+}
+
+export type ProfitabilityGrade =
+  | "LOW"
+  | "MODERATE"
+  | "GOOD"
+  | "EXCELLENT";
+
+export interface ProfitabilityAnalysis {
+  id: string;
+  period: string;
+
+  revenue: number;
+  costOfGoodsSold: number;
+  operatingExpenses: number;
+  totalAssets: number;
+  totalEquity: number;
+
+  grossProfit: number;
+  operatingProfit: number;
+  netProfit: number;
+
+  grossProfitMargin: number;
+  operatingProfitMargin: number;
+  netProfitMargin: number;
+  returnOnAssets: number;
+  returnOnEquity: number;
+
+  profitabilityScore: number;
+  grade: ProfitabilityGrade;
+
+  analysisDate: string;
+  notes?: string;
+
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface ProfitabilityAnalysisSummary {
+  totalAnalyses: number;
+  averageGrossProfitMargin: number;
+  averageOperatingProfitMargin: number;
+  averageNetProfitMargin: number;
+  averageReturnOnAssets: number;
+  averageReturnOnEquity: number;
+  averageProfitabilityScore: number;
+  lowCount: number;
+  moderateCount: number;
+  goodCount: number;
+  excellentCount: number;
+}
+
+export type RevenueTrend =
+  | "STRONG_GROWTH"
+  | "GROWTH"
+  | "STABLE"
+  | "DECLINE"
+  | "STRONG_DECLINE";
+
+export interface RevenueAnalysis {
+  id: string;
+  period: string;
+
+  currentRevenue: number;
+  previousRevenue: number;
+
+  revenueGrowthPercentage: number;
+
+  monthlyAverageRevenue: number;
+  highestRevenue: number;
+  lowestRevenue: number;
+
+  revenueVolatilityPercentage: number;
+
+  trend: RevenueTrend;
+
+  notes?: string;
+
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface RevenueAnalysisSummary {
+  totalRevenue: number;
+  averageRevenue: number;
+
+  revenueGrowthPercentage: number;
+
+  highestRevenue: number;
+  lowestRevenue: number;
+
+  revenueVolatilityPercentage: number;
+
+  trend: RevenueTrend;
+}
+
+export type RevenueForecastStatus =
+  | "DRAFT"
+  | "PROJECTED"
+  | "REVIEWED"
+  | "APPROVED";
+
+export type ForecastMethod =
+  | "MANUAL"
+  | "GROWTH_RATE"
+  | "MOVING_AVERAGE";
+
+export interface RevenueForecastPeriod {
+  period: string;
+  historicalRevenue: number;
+  projectedRevenue: number;
+  growthPercentage: number;
+}
+
+export interface RevenueForecast {
+  id: string;
+  name: string;
+  forecastDate: string;
+  method: ForecastMethod;
+  forecastPeriods: RevenueForecastPeriod[];
+  status: RevenueForecastStatus;
+  notes?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface RevenueForecastSummary {
+  periodCount: number;
+  totalHistoricalRevenue: number;
+  totalProjectedRevenue: number;
+  averageGrowthPercentage: number;
+  projectedIncreaseAmount: number;
+}

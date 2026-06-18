@@ -385,3 +385,11 @@ export * from "./services/cashConversionCycleAnalysisService";
 export * from "./services/debtAnalysisService";
 
 export * from "./services/solvencyAnalysisService";
+
+export * from "./services/financialHealthScoreService";
+
+export * from "./services/creditRiskAnalysisService";
+
+export * from "./services/profitabilityAnalysisService";
+
+export * from "./services/revenueAnalysisService";
