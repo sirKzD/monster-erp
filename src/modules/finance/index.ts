@@ -375,3 +375,11 @@ export * from "./services/capitalGainAnalysisService";
 export * from "./services/investmentRiskAssessmentService";
 
 export * from "./services/investmentBenchmarkService";
+
+export * from "./services/portfolioRebalancingService";
+
+export * from "./services/liquidityAnalysisService";
+
+export * from "./services/cashConversionCycleAnalysisService";
+
+export * from "./services/debtAnalysisService";

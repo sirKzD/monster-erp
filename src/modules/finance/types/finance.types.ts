@@ -925,3 +925,183 @@ export interface InvestmentBenchmarkSummary {
   outperformCount: number;
   underperformCount: number;
 }
+
+export type RebalancingStatus =
+  | "DRAFT"
+  | "ANALYZED"
+  | "APPROVED"
+  | "COMPLETED";
+
+export interface PortfolioRebalancingAsset {
+  investmentId: string;
+  symbol: string;
+  currentValue: number;
+  currentWeight: number;
+  targetWeight: number;
+  variancePercentage: number;
+  recommendedBuyAmount: number;
+  recommendedSellAmount: number;
+}
+
+export interface PortfolioRebalancing {
+  id: string;
+  portfolioId: string;
+  name: string;
+  rebalancingDate: string;
+  thresholdPercentage: number;
+  status: RebalancingStatus;
+  assets: PortfolioRebalancingAsset[];
+  notes?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface PortfolioRebalancingSummary {
+  totalPortfolioValue: number;
+  assetCount: number;
+  overweightAssets: number;
+  underweightAssets: number;
+  totalBuyAmount: number;
+  totalSellAmount: number;
+  largestDeviationPercentage: number;
+}
+
+export type LiquidityStatus =
+  | "strong"
+  | "stable"
+  | "tight"
+  | "critical";
+
+export interface LiquidityAnalysis {
+  id: string;
+  period: string;
+  cashBalance: number;
+  bankBalance: number;
+  receivablesDueSoon: number;
+  payablesDueSoon: number;
+  shortTermDebt: number;
+  operatingCashOutflow: number;
+  liquidityRatio: number;
+  netLiquidityPosition: number;
+  status: LiquidityStatus;
+  analyzedAt: string;
+}
+
+export interface LiquiditySummary {
+  totalLiquidAssets: number;
+  totalShortTermObligations: number;
+  netLiquidityPosition: number;
+  liquidityRatio: number;
+  status: LiquidityStatus;
+}
+
+export interface WorkingCapitalAnalysis {
+  id: string;
+  analysisDate: string;
+
+  currentAssets: number;
+  currentLiabilities: number;
+
+  inventory: number;
+  accountsReceivable: number;
+  accountsPayable: number;
+
+  annualRevenue: number;
+  annualCostOfGoodsSold: number;
+
+  workingCapital: number;
+  currentRatio: number;
+  workingCapitalTurnover: number;
+
+  inventoryDays: number;
+  receivableDays: number;
+  payableDays: number;
+
+  cashConversionCycle: number;
+
+  notes?: string;
+
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface WorkingCapitalAnalysisSummary {
+  totalWorkingCapital: number;
+  currentRatio: number;
+  workingCapitalTurnover: number;
+  cashConversionCycle: number;
+  liquidityStatus: "WEAK" | "STABLE" | "STRONG";
+}
+
+export interface CashConversionCycleAnalysis {
+  id: string;
+  analysisDate: string;
+
+  inventory: number;
+  accountsReceivable: number;
+  accountsPayable: number;
+
+  annualRevenue: number;
+  annualCostOfGoodsSold: number;
+
+  inventoryDays: number;
+  receivableDays: number;
+  payableDays: number;
+
+  cashConversionCycle: number;
+
+  efficiencyScore: number;
+
+  notes?: string;
+
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CashConversionCycleAnalysisSummary {
+  inventoryDays: number;
+  receivableDays: number;
+  payableDays: number;
+  cashConversionCycle: number;
+  efficiencyScore: number;
+  cycleStatus: "EXCELLENT" | "GOOD" | "FAIR" | "POOR";
+}
+
+export type DebtRiskLevel =
+  | "LOW"
+  | "MODERATE"
+  | "HIGH"
+  | "CRITICAL";
+
+export interface DebtAnalysis {
+  id: string;
+  analysisDate: string;
+
+  totalDebt: number;
+  totalAssets: number;
+  totalEquity: number;
+
+  ebit: number;
+  interestExpense: number;
+
+  debtRatio: number;
+  debtToEquityRatio: number;
+  debtToAssetRatio: number;
+  interestCoverageRatio: number;
+
+  riskLevel: DebtRiskLevel;
+
+  notes?: string;
+
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface DebtAnalysisSummary {
+  totalDebt: number;
+  debtRatio: number;
+  debtToEquityRatio: number;
+  debtToAssetRatio: number;
+  interestCoverageRatio: number;
+  riskLevel: DebtRiskLevel;
+}
